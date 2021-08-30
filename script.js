@@ -28,12 +28,12 @@ buttonsBigFive.forEach((btn) => {
 const buttonRemoveFirstItem = document.getElementById("remove-first-item-button");
 const list = document.getElementById("spotted-animals-list");
 //2x clicken waarom??
-// const removeFirstItem = () => {
-//     const firstItem = list.firstChild;
-//     firstItem.remove();    
-// }
+const removeFirstItem = () => {
+    const firstItem = list.firstChild;
+    firstItem.remove();    
+}
 
-// buttonRemoveFirstItem.addEventListener("click", removeFirstItem);
+buttonRemoveFirstItem.addEventListener("click", removeFirstItem);
 
 //of 1x klikken
 buttonRemoveFirstItem.addEventListener("click", event => {
@@ -58,12 +58,17 @@ const buttonRemoveAll = document.getElementById("remove-all-button");
 // }
 // buttonRemoveAll.addEventListener("click", removeAll);
 
+// const removeAll = () => {
+//     list.querySelectorAll("*").forEach (n => n.remove());
+// }
+
+// buttonRemoveAll.addEventListener("click", removeAll);
+
+//of simpele manier!
+
 const removeAll = () => {
-    list.querySelectorAll("*").forEach (n => n.remove());
+    list.innerHTML = "";
 }
 
 buttonRemoveAll.addEventListener("click", removeAll);
-
-
-
 
