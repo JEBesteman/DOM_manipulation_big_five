@@ -27,7 +27,7 @@ buttonsBigFive.forEach((btn) => {
 
 const buttonRemoveFirstItem = document.getElementById("remove-first-item-button");
 const list = document.getElementById("spotted-animals-list");
-//2x clicken waarom??
+//manier 1
 const removeFirstItem = () => {
     const firstItem = list.firstChild;
     firstItem.remove();    
@@ -35,36 +35,34 @@ const removeFirstItem = () => {
 
 buttonRemoveFirstItem.addEventListener("click", removeFirstItem);
 
-//of 1x klikken
+//manier2
 buttonRemoveFirstItem.addEventListener("click", event => {
     const firstItem = list.firstElementChild;
     firstItem.remove();
 })
 
-//dit maakt niet uit, ook 2x clicken
-// buttonRemoveFirstItem.addEventListener("click", event => {
-//     const firstItem = list.firstChild;
-//     firstItem.remove(); 
-// });
-
 //alle children verwijderen
 
 const buttonRemoveAll = document.getElementById("remove-all-button");
 
-// const removeAll = () => {
-//     while (list.firstChild) {
-//         list.removeChild(list.firstChild);
-//     }   
-// }
-// buttonRemoveAll.addEventListener("click", removeAll);
+//manier 1
 
-// const removeAll = () => {
-//     list.querySelectorAll("*").forEach (n => n.remove());
-// }
+const removeAll = () => {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }   
+}
+buttonRemoveAll.addEventListener("click", removeAll);
 
-// buttonRemoveAll.addEventListener("click", removeAll);
+//manier 2
 
-//of simpele manier!
+const removeAll = () => {
+    list.querySelectorAll("*").forEach (n => n.remove());
+}
+
+buttonRemoveAll.addEventListener("click", removeAll);
+
+//of simpele manier! manier 3
 
 const removeAll = () => {
     list.innerHTML = "";
